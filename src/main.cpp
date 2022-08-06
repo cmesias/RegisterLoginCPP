@@ -1,22 +1,9 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mouse.h>
-#include <string.h>
-#include <unistd.h>
-#include <ctime>
-#include <time.h>       /* time */
-#include <algorithm>
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <cstring>
 #include <string>
 #include <vector>
-#include <cmath>
 using namespace std;
 
 class Users {
