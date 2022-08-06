@@ -25,9 +25,9 @@ int promptMenuSelection() {
 	cout << "                   MENU                  " << endl;
 	cout << "-----------------------------------------" << endl;
 	cout << "0. Login "									<< endl;
-	cout << "1. Register" 								<< endl;
-	cout << "2. Forgot password" 						<< endl;
-	cout << "3. Quit" 									<< endl;
+	cout << "1. Register"								<< endl;
+	cout << "2. Forgot password"						<< endl;
+	cout << "3. Quit"									<< endl;
 	cout << endl;
 
 	// Get user input
