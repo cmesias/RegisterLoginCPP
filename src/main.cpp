@@ -71,12 +71,8 @@ bool CheckIfRegisterInputMatchesDatabase(stringstream userNamePassword) {
 		// Username matches existing username in database
 		if (usernameTemp == buffer[i].username) {
 
-			// Password also matches existing username in database, stop looping and return true statement
-			if (passwordTemp == buffer[i].password) {
-
-				// Return that user exists already in database
-				return true;
-			}
+			// Return that user exists already in database
+			return true;
 		}
 	}
 
@@ -275,10 +271,11 @@ void LogInSuccessOrFailure(bool success) {
 void RegisteredSuccessOrFailure(bool existingUser) {
 	cout << endl;
 	if (existingUser) {
-		cout << "Username and Password already exists! Please log in." << endl;
+		cout << "Username already exists! Please log in." << endl;
 	} else {
 		cout << "Registered Successfully!" << endl;
 	}
+
 }
 
 
@@ -286,21 +283,26 @@ void RegisteredSuccessOrFailure(bool existingUser) {
 int main(int argc, char **argv) {
 
 	// Prompt user to select an option from the menu
-	int option = promptMenuSelection();
+	int option = -1;
 
-	// Login existing user
-	if (option == 0) {
+	while (option != 4) {
 
-		// Attempt to login user
-		LogInSuccessOrFailure( CheckIfLoginMatchesDatabase( getLoginUsernameAndPassword() ) );
+		option = promptMenuSelection();
 
-	}
+		// Login existing user
+		if (option == 0) {
 
-	// Register existing user
-	else if (option == 1) {
+			// Attempt to login user
+			LogInSuccessOrFailure( CheckIfLoginMatchesDatabase( getLoginUsernameAndPassword() ) );
 
-		// Get registered username & password
-		RegisteredSuccessOrFailure (CheckIfRegisterInputMatchesDatabase ( getRegisterUsernameAndPassword() ) );
+		}
+
+		// Register existing user
+		else if (option == 1) {
+
+			// Get registered username & password
+			RegisteredSuccessOrFailure (CheckIfRegisterInputMatchesDatabase ( getRegisterUsernameAndPassword() ) );
+		}
 	}
 
 	cout << endl;
